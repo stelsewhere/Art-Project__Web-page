@@ -63,7 +63,6 @@ p {
 	color: #fff;
 }
 
-/* ----- link hover styles -----*/
 .hover:after {
 	content: '';
 	position: absolute;
@@ -86,20 +85,20 @@ p {
 	transform-origin: bottom left;
 	transform: scaleX(1);
 }
-/*----------------------*/
-/*          Nav
-/*----------------------*/
+
 .page-nav { 
+	padding-top: 30px;
 	width: 100%;
 	position: fixed;
 	height: 60px; 
 	background: #fff; 
 	z-index: 3; 
 }
-.nav-right {
-	text-align: right;
-	float: right;
-	width: 85%;
+
+.nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 }
 
 strong {
@@ -107,24 +106,16 @@ strong {
 	color: #1f1f1f;
 }
 
-.nav-left {
-	margin: 18px 0;
-	text-align: left;
-	float: left;
-	width: 15%;
-}
 
 .page-nav .link {
 	font-size: 16px;
-	margin: 12px 0;
-	margin-left: 5%;
 	text-transform: none;
 	color: #1f1f1f;
 }
-
-.page-nav a {
-	display: inline-block;	
+.page-nav .link:not(:last-child) {
+	margin-right: 30px;
 }
+
 
 .page-nav .hover:after {
 	background-color: #1f1f1f;
@@ -156,9 +147,6 @@ strong {
 	z-index: 3; 
 	background: #fff; 
 }
-/*----------------------*/
-/*      Slider top
-/*----------------------*/
 
 #slides { 
 	position: relative; 
@@ -215,9 +203,6 @@ strong {
 	text-align: center;
 }
 
-/*----------------------*/
-/*         News
-/*----------------------*/
 section.latest-news h1 { 
 	color: #333; 
 	text-align: center; 
@@ -343,9 +328,7 @@ section.latest-news h3 {
 	font-weight: bold; 
 	line-height: 4em; 
 }
-/*----------------------*/
-/*       Art shows
-/*----------------------*/
+
 section.daily-news-wrapper {
 	padding: 4% 0; 
 	background: #0600ff;
@@ -438,7 +421,6 @@ hr {
 	color: #fff;  
 }
 
-/* link hover styles */
 aside {
     background: #0600ff;
     display: inline-block;
@@ -461,10 +443,6 @@ aside {
 .daily-news aside:nth-child(-n+2):hover {
     border-right: 1px dotted #0600ff;
 }
-
-/*----------------------*/
-/*   U may also enjoy
-/*----------------------*/
 
 .section-gallery {
 	background: #fff;	
@@ -594,10 +572,6 @@ aside {
 	font-weight: 700;
 }
 
-/*----------------------*/
-/*         Post
-/*----------------------*/
-
 .post__wrapper-container {
 	margin: 0 auto;
 	max-width: 1500px;
@@ -605,9 +579,9 @@ aside {
 }
 
 .post-wrapper {
-	top: 60px;
-	position: relative;
-	padding: 4% 0;
+	display: flex;
+	padding-top: 120px;
+	height: 100%;
 }
 
 .post__img-container {
@@ -616,22 +590,18 @@ aside {
 	position: relative;
 	display: inline-block;
 	width: 40%;
-	margin-right: 15%;
-	padding-left: 20px;
 }
 
 .post__article-container {
-	
-	vertical-align: top;	
+	padding-left: 100px;	
+	padding-right: 16px;
 	display: inline-block;
 	width: 40%;
-
 }
 
 .sticky-content {
-	position: sticky;
-	top: 200px;
-	z-index: 0;
+	position: fixed;
+	padding-right: 50px;
 }
 
 .post {
@@ -670,23 +640,14 @@ aside {
 	
 }
 
-/*----------------------*/
-/* Media
-/*----------------------*/
-
 @media only screen and (min-width : 1024px) and (max-width : 1300px){
-		.gallery-column {
+	.gallery-column {
 		width: 40%;
-	}
-		.post__img-container {
-		width: 50%;
-		margin-right: 5%;
 	}
 }
 
 @media only screen and (min-width : 768px) and (max-width : 1024px){
 
-	/*-------------- News --------------*/
 	section.latest-news h1{ 
 		padding-top: 4%;
 }
@@ -735,10 +696,7 @@ aside {
 		width: 40%; 
 		overflow: hidden;
 	}
-	/*---------------------------------*/
-
-
-	/*----------- Art shows -----------*/
+	
 	.row {
 		    padding: 5% 0;
 	}
@@ -758,28 +716,20 @@ aside {
 	.gallery-column {
 		width: 60%;
 	} 
-	/*--------------------------------*/
-
-	/*----------- Inner article -----------*/
+	
 	.post__img-container {
 		display: block;
 		width: 100%
-	}
+	}	
 
+} 
+
+@media (max-width: 1024px) {
+	
 	.sticky-content {
 		position: relative;
-		top: 200px;
-		width: 100%;
-		padding-bottom: 60px;
 	}
-
-	.post-wrapper {
-		margin: 0 auto;
-		padding: 0 100px ;
-	}
-	/*--------------------------------------*/
-			
-} 
+}
 
 @media only screen and (min-width : 320px) and (max-width : 768px) {
 
@@ -788,13 +738,10 @@ aside {
 		line-height: 1.2em; 
 	}
 
-	/*-------------- Slider --------------*/
 	.slider__meta { 
 		width: 80%;
 	}
-	/*---------------------------------*/
-
-	/*-------------- News --------------*/
+	
 	section.latest-news {
 		margin: 8% 0 -4% 0;
 	}
@@ -835,9 +782,7 @@ aside {
 	section.latest-news .tag { 
 		font-size: 16px; 
 	}
-	/*------------------------------------*/
-
-	/*----------- Art shows -----------*/
+	
 
 	section.daily-news {
 		margin: 0;
@@ -863,9 +808,7 @@ aside {
 		padding: 8% 0 0 0;
 		margin: 0; 
 	}
-	/*---------------------------------*/
-
-	/*-------------- Enjoy --------------*/
+	
 	.section-gallery__slideshow{
 		padding: 8% 0;
 	}
@@ -873,66 +816,96 @@ aside {
 	.gallery-column {
 		width: 80%;
 	} 
-	/*----------------------------------*/
-
-	/*----------- Inner article -----------*/
 
 	.post__img-container {
 		display: block;
 		width: 100%
 	}
 
-	.post__article-container {
-		position: relative;
-		display: block;
-		width: 100%;
-	}
-
-	.sticky-content {
-		position: absolute;
-		width: 80%;
-		padding: 0 30px;
-		padding-bottom: 60px;
-	}
-
-	.post-wrapper {
-		margin: 0 auto;
-		padding: 0 ;		
-	}
-	/*---------------------------------------*/
-
-	/*--------------- Nav -------------------*/
 	.page-nav strong {
 		font-size: 14px;
 	}
 	.page-nav .link {
 		font-size: 14px;
 	}
-	/*---------------------------------------*/
 }
 
+@media (max-width: 900px) {
+	.post-wrapper {
+		flex-direction: column;
+		padding-top: 0;
+	}
+
+	.post__article-container {
+		order: 1;
+		padding-top: 120px;
+		padding-bottom: 40px;
+		width: 60%;
+	}
+
+	.post__img-container {
+		order: 2;
+	}
+}
+
+@media (max-width: 500px) {
+
+	.sv-container {
+		padding: 0 16px;
+	}
+
+	.page-nav { 
+		padding-top: 15px;
+		padding-bottom: 15px;
+		height: 80px;
+}
+
+	.nav {
+		align-items: flex-start;
+	}
+
+	.nav-left strong {
+		font-size: 20px;
+	}
+
+	.nav-right {
+		display: flex;
+		flex-direction: column;
+	}
+
+	.top-title {
+		font-size: 36px;
+	}
+
+	.daily-news-wrapper {
+		margin-top: 40px;
+	}
+
+	.leftpageborder {
+		display: none;
+	}
+	.rightpageborder {
+		display: none;
+	}
+	.bottompageborder {
+		display: none;
+	}
+}
 
 @media only screen and (min-width : 320px) and (max-width : 500px) {
 
 	h1 {
 		font-size: 24px
 	}
-	/*-------------- News --------------*/
 
 		section.latest-news h1{
 		padding-top: 10%;
 	}
-	/*----------------------------------*/
-
-	/*----------- Art shows -----------*/
-
+	
 	section.daily-news aside { 			
 		width: 100%;
 	}
-	/*-----------------------------------*/
-
-	/*-------------- Enjoy --------------*/
-
+	
 	.column-text__right {
 		float: left;
 		padding-top: 10px;	
@@ -941,22 +914,6 @@ aside {
 	.column-text__right a {		
 		padding-top: 0;	
 	}
-	/*-----------------------------------*/
-
-	/*------ Nav ------*/
-	.nav-left {
-		display: none;
-	}
-
-	.nav-right {
-		text-align: left;	
-		width: 100%;
-	}
-
-	.page-nav .link {
-		font-size: 12px;
-		margin-left: 3%;
-	}
-	/*-----------------*/
+	
 
 }
