@@ -552,13 +552,14 @@ aside {
 }
 .section-gallery .clearfix {
 	content: "";
-	display: table;
 	clear: both;
 }
 .column-text {
 	position: relative;
 	margin-top: 6%;
 	width: 100%;
+	display: flex;
+	justify-content: space-between;
 }
 
 .section-gallery .by {
@@ -840,7 +841,8 @@ aside {
 		order: 1;
 		padding-top: 120px;
 		padding-bottom: 40px;
-		width: 60%;
+		width: 100%;
+		padding-left: 0;
 	}
 
 	.post__img-container {
