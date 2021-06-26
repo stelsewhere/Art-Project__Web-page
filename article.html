@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<link rel="stylesheet" href="css/normalize.css">
+	<link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/jquery.js"></script>
+
+</head>
+<body>
+	<header>
+		<div class="page-nav">
+			<div class="post__wrapper-container">
+				<div class="nav-right">
+					<div><a class="link hover" href="#">Latest news</a><a class="link hover" href="#">Art shows</a><a class="link hover" href="#">You may enjoy</a></div>
+				</div>	
+				<div class="nav-left">
+					<strong>Fine art</strong>
+				</div>			
+			</div>
+		</div>		
+	</header>
+	<main>
+		<div class="page-border">
+			<div class="leftpageborder"></div>
+			<div class="rightpageborder"></div>
+			<div class="bottompageborder"></div>
+		</div>
+
+
+
+		<div class="post__wrapper-container">
+			<div class="post-wrapper">
+				<div class="post__img-container" id="article">
+
+					<div class="post post__img1">	
+					</div>
+					<div class="post post__img2">
+						
+					</div>
+					<div class="post post__img3">
+					
+					</div>
+				</div>
+				<div class="post__article-container" id="aside1">
+					<div class="sticky-content">
+						<h1 class="post__title">TFL Zach #3</h1>
+						<p>Andrew Myers' process is fascinating. It starts by thinking of a person’s face as a mountain range. Andrew studies the elevations and recessions of his subject’s face. For example, the nose protrudes out the furthest and thus will be the peak. <a class="link hover" href="#">Andrew Myers</a> then draws a topographical map of his subject’s face on a <a class="link hover" href="#">piece of wood</a>, and hand drills 961 screws into a perfect grid on top of the map. The depth of each screw is dictated by the underlying drawing. </p>
+						<p>Andrew Myers then hand paints each screw head with the utmost attention to shadow, shape, and texture. As many as four to five colors can be <a class="link hover" href="#">painted</a> on the head of just one screw to create the desired effect.</p> <p> The result is a piece that is photo realistic from 20 feet away and an incredible tactile sculpture up close.</p>
+					</div>
+				</div>
+			</div>
+		</div>	
+
+        		<section class="section-gallery">
+				<div class="section-gallery__slideshow">
+                    <div class="heading">
+						<h1 class="gallery__title">You may also enjoy</h1>
+					</div>
+				<div class="section-gallery__wrapper">
+
+					<div class="gallery-column">
+						<div class="gallery-column__content">
+							<a href="#" class="gallery">
+								<div class="column-img column-img1"></div>
+								<div class="column-text clearfix">
+									<div class="column-text__left">
+										<p>Art piece</p>
+										<span>
+											<span class="by">by</span>
+											<strong>Author's name</strong>
+										</span>
+									</div>
+									<div class="column-text__right">
+										<div class="link__wrapper">
+                                            <a class="link hover" href="http://minimalios.com/" target="blank">view art piece</a>
+                                        </div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="gallery-column">
+						<div class="gallery-column__content">
+							<a href="#" class="gallery">
+								<div class="column-img column-img2"></div>
+								<div class="column-text clearfix">
+									<div class="column-text__left">
+										<p>Art piece</p>
+										<span>
+											<span class="by">by</span>
+											<strong>Author's name</strong>
+										</span>
+									</div>
+									<div class="column-text__right">
+										<div class="link__wrapper"><a class="link hover" href="#" target="blank">view art piece</a></div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="gallery-column">
+						<div class="gallery-column__content">
+							<a href="#" class="gallery">
+								<div class="column-img column-img3"></div>
+								<div class="column-text clearfix">
+									<div class="column-text__left">
+										<p>Art piece</p>
+										<span>
+											<span class="by">by</span>
+											<strong>Author's name</strong>
+										</span>
+									</div>
+									<div class="column-text__right">
+										<div class="link__wrapper"><a class="link hover" href="#" target="blank">view art piece</a></div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+
+					<div class="gallery-column">
+						<div class="gallery-column__content">
+							<a href="#" class="gallery">
+								<div class="column-img column-img4"></div>
+								<div class="column-text clearfix">
+									<div class="column-text__left">
+										<p>Art piece</p>
+										<span>
+											<span class="by">by</span>
+											<strong>Author's name</strong>
+										</span>
+									</div>
+									<div class="column-text__right">
+										<div class="link__wrapper"><a class="link hover" href="#" target="blank">view art piece</a></div>
+									</div>
+								</div>
+							</a>
+						</div>
+					</div>
+				</div>
+                    
+			</div>
+        </section>
+			
+    </main>
+
+<script>
+(function(){
+var a = document.querySelector('#aside1'), b = null, P = 0;
+window.addEventListener('scroll', Ascroll, false);
+document.body.addEventListener('scroll', Ascroll, false);
+function Ascroll() {
+  if (b == null) {
+    var Sa = getComputedStyle(a, ''), s = '';
+    for (var i = 0; i < Sa.length; i++) {
+      if (Sa[i].indexOf('overflow') == 0 || Sa[i].indexOf('padding') == 0 || Sa[i].indexOf('border') == 0 || Sa[i].indexOf('outline') == 0 || Sa[i].indexOf('box-shadow') == 0 || Sa[i].indexOf('background') == 0) {
+        s += Sa[i] + ': ' +Sa.getPropertyValue(Sa[i]) + '; '
+      }
+    }
+    b = document.createElement('div');
+    b.style.cssText = s + ' box-sizing: border-box; width: ' + a.offsetWidth + 'px;';
+    a.insertBefore(b, a.firstChild);
+    var l = a.childNodes.length;
+    for (var i = 1; i < l; i++) {
+      b.appendChild(a.childNodes[1]);
+    }
+    a.style.height = b.getBoundingClientRect().height + 'px';
+    a.style.padding = '0';
+    a.style.border = '0';
+  }
+  var Ra = a.getBoundingClientRect(),
+      R = Math.round(Ra.top + b.getBoundingClientRect().height - document.querySelector('#article').getBoundingClientRect().bottom);  // селектор блока, при достижении нижнего края которого нужно открепить прилипающий элемент
+  if ((Ra.top - P) <= 0) {
+    if ((Ra.top - P) <= R) {
+      b.className = 'stop';
+      b.style.top = - R +'px';
+    } else {
+      b.className = 'sticky';
+      b.style.top = P + 'px';
+    }
+  } else {
+    b.className = '';
+    b.style.top = '';
+  }
+  window.addEventListener('resize', function() {
+    a.children[0].style.width = getComputedStyle(a, '').width
+  }, false);
+}
+})()
+</script>
+</body>
+</html>
+
+		
